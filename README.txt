@@ -9,7 +9,6 @@ Este projeto demonstra como prever a demanda futura de insumos laboratoriais uti
 - Statsmodels
 - Matplotlib
 - (Opcional) Jupyter Notebook
-- é isso
 
 ## 📊 Objetivo
 
