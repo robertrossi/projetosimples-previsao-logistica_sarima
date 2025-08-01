@@ -3,7 +3,7 @@ Este projeto demonstra como prever a demanda futura de insumos laboratoriais uti
 
 ## 📦 Tecnologias
 
-- Python -prateste 
+- Python
 - Pandas, NumPy
 - Statsmodels
 - Matplotlib
