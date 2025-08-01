@@ -2,11 +2,11 @@ name: Executar e exportar notebook
 
 on:
   push:
-    branches: [main]  # Executa isso quando fizer push na branch main
+    branches: [main]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest  # Um servidor Linux gratuito que o GitHub usa para rodar o código
+  run-notebook:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Clonar repositório
@@ -15,18 +15,19 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'  # Pode usar outra versão se quiser
+          python-version: '3.11'
 
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install jupyter  # Garante que o jupyter esteja presente
 
-      - name: Rodar notebook e exportar para HTML
+      - name: Executar notebook e salvar como HTML
         run: |
           jupyter nbconvert --to html --execute previsao_insumos.ipynb --output previsao_insumos_resultado.html
 
-      - name: Salvar resultado (artefato)
+      - name: Salvar artefato do relatório HTML
         uses: actions/upload-artifact@v4
         with:
           name: relatorio-html
