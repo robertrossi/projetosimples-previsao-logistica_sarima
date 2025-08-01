@@ -1,0 +1,1 @@
+Estudo séries temporais simples usando sarima para previsão de demanda de um laboratório.
