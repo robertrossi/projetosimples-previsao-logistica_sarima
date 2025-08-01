@@ -1,34 +1,23 @@
+# Ambientes virtuais
 .venv/
-__pycache__/
-*.pyc
+venv/
+env/
+ENV/
+*.egg-info/
 
-
-# Arquivos de cache Python
+# Arquivos e pastas de cache do Python
 __pycache__/
 *.py[cod]
-*.pyo
 
-# Notebooks convertidos ou temporários
+# Arquivos de notebook e metadados
 .ipynb_checkpoints/
 
-# Dados temporários e resultados
-*.csv
-*.xlsx
-*.json
-*.log
-
-# Arquivos de previsão e imagens geradas
-*.png
-*.jpg
-*.pdf
-
-# IDEs e editores
+# Configurações de IDEs
 .vscode/
 .idea/
 
-# Sistemas operacionais
-.DS_Store
-Thumbs.db
-
-# Outros
-*.bak
+# Arquivos do Jupyter
+*.nbconvert.ipynb
+previsao_insumos.csv
+# Arquivos sensíveis
+.env
