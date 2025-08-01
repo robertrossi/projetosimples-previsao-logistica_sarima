@@ -1,5 +1,6 @@
 # Previsão Logística de Insumos com Séries Temporais
 
+
 Este projeto demonstra como prever a demanda futura de insumos laboratoriais utilizando modelos de séries temporais (SARIMA) e simulações com o método de Monte Carlo.
 
 ## 📦 Tecnologias
