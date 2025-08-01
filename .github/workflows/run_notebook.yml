@@ -1,9 +1,9 @@
 name: Executar notebook e exportar HTML
 
 on:
-  push: 
+  push:
     branches:
-    - main
+        - main
 
 jobs:
   run-notebook:
