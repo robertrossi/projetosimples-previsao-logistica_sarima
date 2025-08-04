@@ -1,0 +1,34 @@
+name: Executar notebook e exportar CSV
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter pandas  # pandas necessário pro .to_csv
+
+      - name: Executar notebook
+        run: |
+          jupyter nbconvert --to notebook --execute notebook.ipynb --output notebook_executado.ipynb
+
+      - name: Salvar CSV como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultado-csv
+          path: previsao_insumos.csv
