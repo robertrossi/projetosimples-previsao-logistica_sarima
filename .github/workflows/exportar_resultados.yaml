@@ -21,14 +21,20 @@ jobs:
       - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
-          pip install jupyter pandas  # pandas necessário pro .to_csv
+          pip install jupyter pandas matplotlib numpy scikit-learn seaborn
 
       - name: Executar notebook
         run: |
-          jupyter nbconvert --to notebook --execute notebook.ipynb --output notebook_executado.ipynb
+          jupyter nbconvert --to notebook --execute notebook.ipynb --output notebook_executado.ipynb --debug
 
       - name: Salvar CSV como artefato
         uses: actions/upload-artifact@v4
         with:
           name: resultado-csv
           path: previsao_insumos.csv
+
+      - name: Salvar notebook executado como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: notebook-executado
+          path: notebook_executado.ipynb
